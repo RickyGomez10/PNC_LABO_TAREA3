@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>La compra no se pudo realizar, usted quiere comprar mas de la cantidad de productos que hay</h1>
+	<h1> El producto <th th:text="${p}"></th>  no se puede adquirir</h1>
 	<a href="compraProducto">regresar</a>
 </body>
 </html>

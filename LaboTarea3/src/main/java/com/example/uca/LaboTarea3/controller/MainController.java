@@ -32,11 +32,17 @@ public class MainController {
 	}
 	
 	@PostMapping("/validar")
-	public String validar(Product producto) {
+	public ModelAndView validar(Product producto) {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("p", productos.get(producto.getId()).getNombre());
+		
+		
 		if( producto.getCantidad() > productos.get(producto.getId()).getCantidad()) {
-			return "error";
+			mav.setViewName("error");
+			return mav;
 		}else {
-			return "aceptado";
+			mav.setViewName("compra");
+			return mav;
 				
 		}
 		
